@@ -6,9 +6,10 @@ import uvicorn
 
 # Inicialización de la app FastAPI
 app = FastAPI()
-app.get("/")
-def read_root():
-    return {"message": "Hello, World!"}
+@app.get("/")
+def root():
+    return {"message": "Bienvenido al backend FastAPI"}
+
 app.include_router(user.router)
 app.include_router(tareas.router)
 app.include_router(reportes.router)
@@ -32,5 +33,5 @@ app.add_middleware(
 
 
 # Comando para correr la aplicación usando Uvicornn
-if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=3000 )
+# if __name__ == "__main__":
+    # uvicorn.run(app, host="127.0.0.1", port=3000 )
