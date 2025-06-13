@@ -6,6 +6,9 @@ import uvicorn
 
 # Inicialización de la app FastAPI
 app = FastAPI()
+app.get("/")
+def read_root():
+    return {"message": "Hello, World!"}
 app.include_router(user.router)
 app.include_router(tareas.router)
 app.include_router(reportes.router)
