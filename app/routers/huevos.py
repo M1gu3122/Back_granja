@@ -30,7 +30,7 @@ def obtener_huevos():
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM huevos")
             huevos = cursor.fetchall()
-        connection.close()
+    
         return huevos
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
