@@ -44,7 +44,7 @@ def obtener_lotes():
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM lote")
             lotes = cursor.fetchall()
-        connection.close()
+        
         return lotes
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
