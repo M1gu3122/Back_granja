@@ -17,7 +17,7 @@ def total_aves_por_galpon():
                 "SELECT id_galpon, SUM(aves) AS total_aves FROM galpon GROUP BY id_galpon"
             )
             datos = cursor.fetchall()
-        connection.close()
+        
         return datos
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -33,7 +33,7 @@ def lotes_y_aves_por_galpon():
                 "SELECT id_galpon, COUNT(id_lote) AS numero_lotes, SUM(num_aves) AS total_aves FROM lote GROUP BY id_galpon"
             )
             datos = cursor.fetchall()
-        connection.close()
+        
         return datos
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -56,7 +56,7 @@ def tareas_pendientes_por_usuario():
                 ("Pendiente",),
             )
             datos = cursor.fetchall()
-        connection.close()
+        
         return datos
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -77,7 +77,7 @@ def frecuencia_diagnostico():
             """
             )
             datos = cursor.fetchall()
-        connection.close()
+        
         return datos
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
