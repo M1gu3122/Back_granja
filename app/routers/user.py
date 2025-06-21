@@ -154,7 +154,7 @@ def editar_usuario(id_usuario: int, estado_usuario: EstadoUsuario):
                     ),
                 )
             connection.commit()
-            connection.close()
+            
         return {"informacion": "Estado actualizado"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
