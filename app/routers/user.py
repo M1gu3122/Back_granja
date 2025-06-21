@@ -20,7 +20,7 @@ def obtener_usuario(id_usuario: int):
                 "SELECT * FROM usuarios WHERE id_usuario = %s", (id_usuario,)
             )
             user = cursor.fetchone()
-        connection.close()
+
         if user is None:
             raise HTTPException(status_code=404, detail="Usuario no encontrado")
         return user
