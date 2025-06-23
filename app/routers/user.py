@@ -286,7 +286,7 @@ async def login(login_request: LoginRequest):
             ].strip()  # La contraseña almacenada está en la segunda columna
             user_role = user["tipo_usuario"]  # El rol está en la tercera columna
             usuario = user["usuario"]
-            genero = ["sexo"]
+            genero = user["sexo"]
 
             print(f"ID Usuario: {id_usuario}")
             print(f"Contraseña almacenada: {stored_password}")
