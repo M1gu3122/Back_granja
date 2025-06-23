@@ -265,7 +265,7 @@ async def login(login_request: LoginRequest):
         cursor = connection.cursor()
         cursor.execute(
             """
-            SELECT usuarios.id_usuario,usuarios.usuario, usuarios.contraseña,usuarios.estado, roles.tipo_usuario 
+            SELECT usuarios.id_usuario,usuarios.usuario, usuarios.contraseña,usuarios.estado,usuarios.sexo, roles.tipo_usuario 
             FROM usuarios 
             JOIN roles ON usuarios.id_rol = roles.id_rol 
             WHERE usuarios.usuario = %s and usuarios.estado='activo' 
