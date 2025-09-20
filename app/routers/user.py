@@ -105,6 +105,7 @@ def editar_usuario(id_usuario: int, usuario: Usuario):
                 sql = """
                 UPDATE usuarios
                 SET
+                    id_usuario =%s,
                     nombres = %s,
                     apellidos = %s,
                     edad = %s,
@@ -117,6 +118,7 @@ def editar_usuario(id_usuario: int, usuario: Usuario):
                 cursor.execute(
                     sql,
                     (
+                        usuario.id_usuario,
                         usuario.nombres,
                         usuario.apellidos,
                         usuario.edad,
@@ -317,4 +319,5 @@ async def login(login_request: LoginRequest):
         print(f"Error en login: {e}")
         raise HTTPException(status_code=500, detail=f"Error en login: {str(e)}")
     
+
 
