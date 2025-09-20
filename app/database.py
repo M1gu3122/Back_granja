@@ -7,9 +7,10 @@ def get_db_connection():
         host="mainline.proxy.rlwy.net",
         user="root",
         password="MeUqMeSQfSRgleonPpcZOPCtHUyTGfiR",
-        database="railway",
+        database="granja",
         port=30108,
         cursorclass=pymysql.cursors.DictCursor,
     )
+
 
 
