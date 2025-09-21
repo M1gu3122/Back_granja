@@ -131,7 +131,6 @@ def editar_usuario(id_usuario: int, usuario: Usuario):
                     ),
                 )
             connection.commit()
-            connection.close()
         return {"informacion": "Registro actualizado"}
     except Exception as e:
         import traceback
