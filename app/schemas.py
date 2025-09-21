@@ -1,3 +1,4 @@
+from typing import Optional
 from pydantic import BaseModel, Field
 
 
@@ -15,7 +16,7 @@ class Usuario(BaseModel):
     id_rol: int
     edad: int
     sexo: str
-    estado: str = Field(default="activo")
+    estado: Optional[str] = Field(default="activo")
 
     
 class EstadoUsuario(BaseModel):
