@@ -134,6 +134,8 @@ def editar_usuario(id_usuario: int, usuario: Usuario):
             connection.close()
         return {"informacion": "Registro actualizado"}
     except Exception as e:
+        import traceback
+        print("Error en editar_usuario:", traceback.format_exc())  # 👀 muestra detalle real
         raise HTTPException(status_code=500, detail=str(e))
 
 
