@@ -112,7 +112,7 @@ def editar_usuario(id_usuario: int, usuario: Usuario):
                     edad = %s,
                     sexo = %s,
                     usuario = %s,
-                    contraseña = %s,
+                    ´contraseña´ = %s,
                     id_rol = %s
                 WHERE id_usuario = %s
                 """
@@ -320,6 +320,7 @@ async def login(login_request: LoginRequest):
         print(f"Error en login: {e}")
         raise HTTPException(status_code=500, detail=f"Error en login: {str(e)}")
     
+
 
 
 
