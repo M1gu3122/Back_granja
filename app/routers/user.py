@@ -112,7 +112,7 @@ def editar_usuario(id_usuario: int, usuario: Usuario):
                     edad = %s,
                     sexo = %s,
                     usuario = %s,
-                    ´contraseña´ = %s,
+                    contraseña = %s,
                     id_rol = %s
                 WHERE id_usuario = %s
                 """
